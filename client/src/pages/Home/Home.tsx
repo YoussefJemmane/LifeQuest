@@ -12,7 +12,7 @@ import {
   TrendingUp,
   Users,
   Target,
-  Gamepad,
+  Gamepad2,
 } from "lucide-react";
 const Home = () => {
   return (
@@ -180,7 +180,7 @@ const Home = () => {
                 color: "text-chart-5",
               },
               {
-                icon: <Gamepad className="w-8 h-8" />,
+                icon: <Gamepad2 className="w-8 h-8" />,
                 title: "Gamified Experience",
                 description:
                   "Experience points, levels, and rewards make personal development fun and engaging.",
