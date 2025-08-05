@@ -1,7 +1,14 @@
 import React from "react";
 import { Button } from "../../components/ui/Button";
 import { Badge } from "../../components/ui/Badge";
-import { Card, CardContent } from "../../components/ui/Card";
+import { Card, CardContent, CardHeader } from "../../components/ui/Card";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "../../components/ui/Accordion";
+import { Check, Crown } from "lucide-react";
 
 import { ImageWithFallback } from "../../components/ui/ImageWithFallback";
 import {
@@ -207,7 +214,166 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <section id="pricing" className="py-20 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold">
+              Choose Your Adventure Plan
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Start your journey for free or unlock premium features to
+              accelerate your growth
+            </p>
+          </div>
 
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+            {/* Free Plan */}
+            <Card className="relative">
+              <CardHeader className="text-center pb-8">
+                <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Star className="w-6 h-6 text-muted-foreground" />
+                </div>
+                <h3 className="text-xl font-semibold">Explorer</h3>
+                <p className="text-muted-foreground">
+                  Perfect for getting started
+                </p>
+                <div className="mt-4">
+                  <span className="text-3xl font-bold">Free</span>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-3">
+                  {[
+                    "Up to 5 active quests",
+                    "Basic progress tracking",
+                    "Achievement badges",
+                    "Community access",
+                    "Mobile app",
+                  ].map((feature, index) => (
+                    <div key={index} className="flex items-center space-x-3">
+                      <Check className="w-4 h-4 text-chart-1" />
+                      <span className="text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                <Button
+                  className="w-full"
+                  variant="outline"
+                  
+                >
+                  Get Started Free
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Pro Plan */}
+            <Card className="relative border-2 border-primary">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <Badge className="bg-primary text-primary-foreground">
+                  Most Popular
+                </Badge>
+              </div>
+              <CardHeader className="text-center pb-8">
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Crown className="w-6 h-6 text-primary-foreground" />
+                </div>
+                <h3 className="text-xl font-semibold">Adventurer</h3>
+                <p className="text-muted-foreground">
+                  For serious goal achievers
+                </p>
+                <div className="mt-4">
+                  <span className="text-3xl font-bold">$9</span>
+                  <span className="text-muted-foreground">/month</span>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-3">
+                  {[
+                    "Unlimited quests",
+                    "Advanced analytics",
+                    "Habit tracking",
+                    "Guild creation",
+                    "Priority support",
+                    "Custom themes",
+                    "Export data",
+                  ].map((feature, index) => (
+                    <div key={index} className="flex items-center space-x-3">
+                      <Check className="w-4 h-4 text-chart-1" />
+                      <span className="text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                <Button className="w-full" >
+                  Start Pro Trial
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Pricing FAQ */}
+          <div className="mt-16">
+            <h3 className="text-xl font-semibold mb-8 text-center">
+              Frequently Asked Questions
+            </h3>
+            <div className="max-w-3xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-2">
+                <AccordionItem
+                  value="item-1"
+                  className="border rounded-lg px-4"
+                >
+                  <AccordionTrigger className="font-medium">
+                    Can I change plans anytime?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Yes! You can upgrade, downgrade, or cancel your subscription
+                    at any time. Changes take effect at your next billing cycle.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem
+                  value="item-2"
+                  className="border rounded-lg px-4"
+                >
+                  <AccordionTrigger className="font-medium">
+                    Is there a free trial for paid plans?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Yes, the Adventurer plan comes with a 14-day free trial. No
+                    credit card required to start.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem
+                  value="item-3"
+                  className="border rounded-lg px-4"
+                >
+                  <AccordionTrigger className="font-medium">
+                    What happens to my data if I cancel?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Your data remains accessible for 30 days after cancellation.
+                    You can export all your progress and achievements before
+                    deletion.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem
+                  value="item-4"
+                  className="border rounded-lg px-4"
+                >
+                  <AccordionTrigger className="font-medium">
+                    Do you offer student discounts?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    Yes! Students get 50% off any paid plan. Just verify your
+                    student status with a valid .edu email address.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary to-chart-1">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
