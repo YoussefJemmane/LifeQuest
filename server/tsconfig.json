@@ -1,9 +1,0 @@
-{
-  "compilerOptions": {
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "allowImportingTsExtensions": true, // Add this line
-    "noEmit": true, // Required when using allowImportingTsExtensions
-    "types": ["node"]
-  }
-}

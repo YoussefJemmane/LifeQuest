@@ -1,6 +1,6 @@
-import express from 'express';
-import mongoose from 'mongoose';
 
+const express = require("express")
+const mongoose = require("mongoose")
 const router = express.Router();
 
 // Basic health check
@@ -38,7 +38,7 @@ router.get('/health', async (req, res) => {
 });
 
 // Check database connection
-async function checkDatabase(): Promise<string> {
+async function checkDatabase() {
   try {
     if (mongoose.connection.readyState === 1) {
       await mongoose.connection.db.admin().ping();
@@ -61,5 +61,4 @@ function getMemoryUsage() {
     external: `${Math.round(memUsage.external / 1024 / 1024)} MB`,
   };
 }
-
-export default router;
+module.exports = router
